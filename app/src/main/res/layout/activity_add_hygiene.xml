@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/hygiene_relative_layout">
+
+    <TextView
+        android:id="@+id/add_hygiene_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:layout_marginTop="33dp"
+        android:text="@string/hygiene"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_below="@+id/add_hygiene_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:text="@string/leave_empty_if_not_applicable"
+        android:textAlignment="center"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/submit_hygiene"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="17dp" />
+
+    <CheckBox
+        android:id="@+id/grooming"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView14"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="38dp"
+        android:layout_toLeftOf="@+id/submit_hygiene"
+        android:layout_toStartOf="@+id/submit_hygiene"
+        android:text="@string/grooming" />
+
+    <CheckBox
+        android:id="@+id/bathing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/submit_hygiene"
+        android:layout_alignRight="@+id/submit_hygiene"
+        android:layout_alignTop="@+id/grooming"
+        android:text="@string/bathing" />
+
+    <CheckBox
+        android:id="@+id/oral_hygiene"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/bathing"
+        android:layout_marginLeft="23dp"
+        android:layout_marginStart="23dp"
+        android:layout_toEndOf="@+id/bathing"
+        android:layout_toRightOf="@+id/bathing"
+        android:text="@string/oral_hygiene" />
+
+    <CheckBox
+        android:id="@+id/skin_care"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/grooming"
+        android:layout_alignStart="@+id/grooming"
+        android:layout_below="@+id/grooming"
+        android:layout_marginTop="20dp"
+        android:text="@string/skin_care" />
+
+    <CheckBox
+        android:id="@+id/pedicure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/skin_care"
+        android:layout_alignBottom="@+id/skin_care"
+        android:layout_alignLeft="@+id/bathing"
+        android:layout_alignStart="@+id/bathing"
+        android:text="@string/pedicure" />
+
+    <CheckBox
+        android:id="@+id/dressing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/oral_hygiene"
+        android:layout_alignStart="@+id/oral_hygiene"
+        android:layout_alignTop="@+id/pedicure"
+        android:text="@string/dressing" />
+
+    <CheckBox
+        android:id="@+id/toilet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/skin_care"
+        android:layout_alignStart="@+id/skin_care"
+        android:layout_below="@+id/skin_care"
+        android:layout_marginTop="21dp"
+        android:text="@string/toilet" />
+
+    <CheckBox
+        android:id="@+id/shaving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/toilet"
+        android:layout_alignLeft="@+id/pedicure"
+        android:layout_alignStart="@+id/pedicure"
+        android:text="@string/shaving" />
+
+    <CheckBox
+        android:id="@+id/other_add_hygiene"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/dressing"
+        android:layout_alignStart="@+id/dressing"
+        android:layout_alignTop="@+id/shaving"
+        android:text="@string/other" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView10"
+        android:layout_centerHorizontal="true"
+        android:text="@string/check_any_hygiene_activities" />
+
+    <EditText
+        android:id="@+id/hygiene_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="175sp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="69dp"
+        android:layout_toEndOf="@+id/toilet"
+        android:layout_toRightOf="@+id/toilet"
+        android:ems="10"
+        android:hint="@string/add_any_details"
+        android:inputType="textMultiLine" />
+
+</RelativeLayout>

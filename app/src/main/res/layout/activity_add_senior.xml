@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/add_senior_relative">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="27dp"
+        android:text="@string/add_a_dependent"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/first_name_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="51dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="94dp"
+        android:text="@string/first_name" />
+
+    <EditText
+        android:id="@+id/first_name_senior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_alignBaseline="@+id/first_name_view"
+        android:layout_alignBottom="@+id/first_name_view"
+        android:layout_toRightOf="@+id/first_name_view"
+        android:layout_toEndOf="@+id/first_name_view" />
+
+    <TextView
+        android:id="@+id/last_name_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/last_name"
+        android:layout_alignBaseline="@+id/last_name_senior"
+        android:layout_alignBottom="@+id/last_name_senior"
+        android:layout_alignLeft="@+id/first_name_view"
+        android:layout_alignStart="@+id/first_name_view" />
+
+    <EditText
+        android:id="@+id/last_name_senior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginTop="31dp"
+        android:layout_below="@+id/first_name_senior"
+        android:layout_alignLeft="@+id/first_name_senior"
+        android:layout_alignStart="@+id/first_name_senior" />
+
+    <Button
+        android:id="@+id/add_senior_button"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="13dp"
+        android:text="@string/submit"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        android:layout_alignBaseline="@+id/address_senior"
+        android:layout_alignBottom="@+id/address_senior"
+        android:layout_alignLeft="@+id/last_name_view"
+        android:layout_alignStart="@+id/last_name_view" />
+
+    <EditText
+        android:id="@+id/address_senior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_below="@+id/last_name_senior"
+        android:layout_alignLeft="@+id/last_name_senior"
+        android:layout_alignStart="@+id/last_name_senior" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/address_senior"
+        android:layout_marginTop="35dp"
+        android:text="@string/date_of_birth" />
+
+    <EditText
+        android:id="@+id/date_of_birth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/address_senior"
+        android:layout_alignStart="@+id/address_senior"
+        android:layout_below="@+id/address_senior"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="date"
+        android:focusable="false"/>
+
+    <RadioGroup
+        android:layout_width="200sp"
+        android:layout_height="60sp"
+        android:id="@+id/radioGroupSex"
+        android:layout_below="@+id/date_of_birth"
+        android:layout_alignLeft="@+id/date_of_birth"
+        android:layout_alignStart="@+id/date_of_birth"
+        android:layout_marginTop="26dp">
+
+        <RadioButton
+            android:id="@+id/radio_sex_male"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/male" />
+
+        <RadioButton
+            android:id="@+id/radio_sex_female"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/female" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sex"
+        android:layout_alignTop="@+id/radioGroupSex"
+        android:layout_alignLeft="@+id/textView9"
+        android:layout_alignStart="@+id/textView9"
+        android:layout_marginTop="16dp" />
+
+</RelativeLayout>

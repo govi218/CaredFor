@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:id="@+id/scrollview">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/register_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            android:text="@string/register_an_account"
+            android:textSize="30sp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/first_name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/register_header"
+            android:layout_marginLeft="42dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="49dp"
+            android:text="@string/first_name" />
+
+        <TextView
+            android:id="@+id/last_name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/first_name_view"
+            android:layout_alignStart="@+id/first_name_view"
+            android:layout_below="@+id/first_name_view"
+            android:layout_marginTop="39dp"
+            android:text="@string/last_name" />
+
+        <TextView
+            android:id="@+id/email_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/last_name_view"
+            android:layout_alignStart="@+id/last_name_view"
+            android:layout_below="@+id/last_name_view"
+            android:layout_marginTop="41dp"
+            android:text="@string/email" />
+
+        <TextView
+            android:id="@+id/phone_number_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/email_view"
+            android:layout_alignStart="@+id/email_view"
+            android:layout_below="@+id/email_view"
+            android:layout_marginTop="43dp"
+            android:text="@string/phone_number" />
+
+        <TextView
+            android:id="@+id/role_radio_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/phone_number_view"
+            android:layout_alignStart="@+id/phone_number_view"
+            android:layout_below="@+id/phone_number_view"
+            android:layout_marginTop="49dp"
+            android:text="@string/role" />
+
+        <RadioGroup
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_alignEnd="@+id/phone_number"
+            android:layout_alignLeft="@+id/phone_number"
+            android:layout_alignRight="@+id/phone_number"
+            android:layout_alignStart="@+id/phone_number"
+            android:layout_alignTop="@+id/role_radio_view"
+            android:id="@+id/radio_group">
+
+            <RadioButton
+                android:id="@+id/relative_radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/relative" />
+
+            <RadioButton
+                android:id="@+id/caretaker_radio"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:text="@string/caretaker" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/first_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/first_name_view"
+            android:layout_alignBottom="@+id/first_name_view"
+            android:layout_toEndOf="@+id/phone_number_view"
+            android:layout_toRightOf="@+id/phone_number_view"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/last_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/first_name"
+            android:layout_alignRight="@+id/first_name"
+            android:layout_below="@+id/first_name"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:layout_alignBaseline="@+id/email_view"
+            android:layout_alignBottom="@+id/email_view"
+            android:layout_alignLeft="@+id/last_name"
+            android:layout_alignStart="@+id/last_name" />
+
+        <EditText
+            android:id="@+id/phone_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/email"
+            android:layout_alignRight="@+id/email"
+            android:layout_below="@+id/email"
+            android:layout_marginTop="19dp"
+            android:ems="10"
+            android:inputType="phone" />
+
+        <Button
+            android:id="@+id/submit_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:layout_marginTop="34dp"
+            android:layout_below="@+id/confirm_password"
+            android:layout_centerHorizontal="true"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/pass_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:layout_marginTop="13dp"
+            android:layout_below="@+id/radio_group"
+            android:layout_alignLeft="@+id/role_radio_view"
+            android:layout_alignStart="@+id/role_radio_view" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:layout_below="@+id/radio_group"
+            android:layout_alignLeft="@+id/radio_group"
+            android:layout_alignStart="@+id/radio_group" />
+
+        <EditText
+            android:id="@+id/confirm_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/password"
+            android:layout_alignStart="@+id/password"
+            android:layout_below="@+id/password"
+            android:layout_marginTop="22dp"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/confirm_pass_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/pass_view"
+            android:layout_alignRight="@+id/pass_view"
+            android:layout_alignTop="@+id/confirm_password"
+            android:text="@string/confirm_password"
+            android:layout_alignLeft="@+id/pass_view"
+            android:layout_alignStart="@+id/pass_view" />
+
+    </RelativeLayout>
+</ScrollView>

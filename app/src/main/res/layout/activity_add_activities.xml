@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:id="@+id/scrollview"
+    android:isScrollContainer="false">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/activities_relative_layout">
+
+        <TextView
+            android:id="@+id/add_activities_title"
+            android:layout_width="wrap_content"
+            android:layout_height="50sp"
+            android:layout_marginTop="33dp"
+            android:text="@string/activities"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:layout_below="@+id/add_activities_title"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="12dp"
+            android:text="@string/leave_empty_if_not_applicable"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <Button
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:id="@+id/submit_activities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <CheckBox
+            android:id="@+id/shopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView10"
+            android:layout_marginEnd="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="54dp"
+            android:layout_toLeftOf="@+id/submit_activities"
+            android:layout_toStartOf="@+id/submit_activities"
+            android:text="@string/shopping" />
+
+        <CheckBox
+            android:id="@+id/walking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/submit_activities"
+            android:layout_alignRight="@+id/submit_activities"
+            android:layout_alignTop="@+id/shopping"
+            android:text="@string/walking" />
+
+        <CheckBox
+            android:id="@+id/physio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/walking"
+            android:layout_marginLeft="23dp"
+            android:layout_marginStart="23dp"
+            android:layout_toEndOf="@+id/walking"
+            android:layout_toRightOf="@+id/walking"
+            android:text="@string/physio" />
+
+        <CheckBox
+            android:id="@+id/games"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/games"
+            android:layout_below="@+id/shopping"
+            android:layout_alignLeft="@+id/shopping"
+            android:layout_alignStart="@+id/shopping" />
+
+        <CheckBox
+            android:id="@+id/socializing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/games"
+            android:layout_alignBottom="@+id/games"
+            android:layout_alignLeft="@+id/walking"
+            android:layout_alignStart="@+id/walking"
+            android:text="@string/socializing" />
+
+        <CheckBox
+            android:id="@+id/medical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/physio"
+            android:layout_alignStart="@+id/physio"
+            android:layout_alignTop="@+id/socializing"
+            android:text="@string/medical_trips" />
+
+        <CheckBox
+            android:id="@+id/exercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/games"
+            android:layout_alignStart="@+id/games"
+            android:layout_below="@+id/games"
+            android:layout_marginTop="21dp"
+            android:text="@string/exercise" />
+
+        <CheckBox
+            android:id="@+id/sports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/exercise"
+            android:layout_alignLeft="@+id/socializing"
+            android:layout_alignStart="@+id/socializing"
+            android:text="@string/sports" />
+
+        <CheckBox
+            android:id="@+id/other_activities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/medical"
+            android:layout_alignStart="@+id/medical"
+            android:layout_alignTop="@+id/sports"
+            android:text="@string/other" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView10"
+            android:layout_centerHorizontal="true"
+            android:text="@string/check_activities_to_add" />
+
+        <EditText
+            android:id="@+id/activities_comments"
+            android:layout_width="wrap_content"
+            android:layout_height="175sp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="69dp"
+            android:layout_toEndOf="@+id/exercise"
+            android:layout_toRightOf="@+id/exercise"
+            android:ems="10"
+            android:hint="@string/add_any_details"
+            android:inputType="textMultiLine" />
+
+    </RelativeLayout>
+</ScrollView>

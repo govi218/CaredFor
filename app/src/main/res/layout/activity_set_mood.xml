@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/add_activities_title"
+        android:layout_width="wrap_content"
+        android:layout_height="50sp"
+        android:layout_marginTop="33dp"
+        android:text="@string/mood"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:progressDrawable="@drawable/seekbar_style"
+        android:thumb="@drawable/custom_thumb"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="match_parent"
+        android:layout_height="30sp"
+        android:layout_below="@+id/add_activities_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp"
+        android:text="(Move the slider to set the mood as observed)"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/happy"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_above="@+id/seek_bar"
+        android:layout_alignEnd="@+id/seek_bar"
+        android:layout_alignRight="@+id/seek_bar"
+        app:srcCompat="@color/transparent" />
+
+    <ImageView
+        android:id="@+id/sad"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_above="@+id/seek_bar"
+        android:layout_alignLeft="@+id/seek_bar"
+        android:layout_alignStart="@+id/seek_bar"
+        app:srcCompat="@color/transparent" />
+
+    <ImageView
+        android:id="@+id/neutral"
+        android:layout_width="40sp"
+        android:layout_height="40sp"
+        android:layout_above="@+id/seek_bar"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@color/transparent" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/comments"
+        android:layout_alignBaseline="@+id/mood_comments"
+        android:layout_alignBottom="@+id/mood_comments"
+        android:layout_alignLeft="@+id/seek_bar"
+        android:layout_alignStart="@+id/seek_bar" />
+
+    <EditText
+        android:id="@+id/mood_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="150sp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:hint="Enter any additional details (optional)"
+        android:inputType="textMultiLine"
+        android:layout_below="@+id/progress_seek_bar"
+        android:layout_alignRight="@+id/seek_bar"
+        android:layout_alignEnd="@+id/seek_bar" />
+
+    <Button
+        android:id="@+id/submit_mood"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:shadowColor="@color/transparent"
+        android:text="@string/submit"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/progress_seek_bar"
+        android:layout_width="100sp"
+        android:layout_height="30sp"
+        android:layout_below="@+id/seek_bar"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold" />
+
+</RelativeLayout>

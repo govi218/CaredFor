@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="500sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="700sp"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/schedule_image"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="30dp"
+                app:srcCompat="@drawable/calendar"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/food_intake_image"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_below="@+id/schedule_image"
+                android:layout_toLeftOf="@+id/food_intake"
+                android:layout_toStartOf="@+id/food_intake"
+                app:srcCompat="@drawable/foodandmeals"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/hygiene_image"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/food_intake_image"
+                android:layout_alignStart="@+id/food_intake_image"
+                android:layout_below="@+id/food_intake_image"
+                app:srcCompat="@drawable/hygienebath"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/sleep_image"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/hygiene_image"
+                android:layout_alignStart="@+id/hygiene_image"
+                android:layout_below="@+id/hygiene_image"
+                app:srcCompat="@drawable/sleep"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/mood_image"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/activities_image"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/activities_image"
+                app:srcCompat="@drawable/smiley"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/medication_image"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/sleep_image"
+                android:layout_alignStart="@+id/sleep_image"
+                android:layout_below="@+id/sleep_image"
+                app:srcCompat="@drawable/medication"
+                tools:ignore="ContentDescription" />
+
+            <ImageButton
+                android:id="@+id/activities_image"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/medication_image"
+                android:layout_alignStart="@+id/medication_image"
+                android:layout_below="@+id/medication_image"
+                app:srcCompat="@drawable/activities"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/schedule"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_marginTop="30dp"
+                android:layout_toEndOf="@+id/schedule_image"
+                android:layout_toRightOf="@+id/schedule_image"
+                android:gravity="start|center"
+                android:text="@string/careschedule"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/food_intake"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/schedule"
+                android:layout_alignStart="@+id/schedule"
+                android:layout_below="@+id/schedule"
+                android:gravity="start|center"
+                android:text="@string/food_intake"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/hygiene"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/food_intake"
+                android:layout_alignStart="@+id/food_intake"
+                android:layout_below="@+id/food_intake"
+                android:gravity="start|center"
+                android:text="@string/hygiene"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sleep"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/hygiene"
+                android:layout_alignStart="@+id/hygiene"
+                android:layout_below="@+id/hygiene"
+                android:gravity="start|center"
+                android:text="@string/sleep"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/medication"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/sleep"
+                android:layout_alignStart="@+id/sleep"
+                android:layout_below="@+id/sleep"
+                android:gravity="start|center"
+                android:text="@string/medication"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/activities"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/medication"
+                android:layout_alignStart="@+id/medication"
+                android:layout_below="@+id/medication"
+                android:gravity="start|center"
+                android:text="@string/activities"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/mood"
+                android:layout_width="match_parent"
+                android:layout_height="100sp"
+                android:layout_alignLeft="@+id/activities"
+                android:layout_alignStart="@+id/activities"
+                android:layout_below="@+id/activities"
+                android:gravity="start|center"
+                android:text="@string/mood"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/senior_box"
+        android:layout_width="wrap_content"
+        android:layout_height="200sp"
+        android:layout_above="@+id/scrollView3"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:gravity="start|center"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
