@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.admin.caredfor.MainActivity.MainActivity;
 import com.example.admin.caredfor.R;
 import com.example.admin.caredfor.RootActivity;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +38,7 @@ public class AddSleep extends RootActivity {
 
         //receive senior
         final Senior senior = (Senior) getIntent().getSerializableExtra("senior");
-        final Date date = (Date) getIntent().getSerializableExtra("date");
+        final String date = (String) getIntent().getSerializableExtra("date");
         final String role = (String) getIntent().getSerializableExtra("role");
 
         final List<CheckBox> checkBoxList = new ArrayList<>();
@@ -93,7 +94,7 @@ public class AddSleep extends RootActivity {
                     seniorSleep = new HashMap<>();
                 }
 
-                seniorSleep.put(date.toString(), sleep.toMap());
+                seniorSleep.put(date, sleep.toMap());
                 senior.setSleep(seniorSleep);
 
                 //delete the from db and re-add with new information
@@ -109,12 +110,6 @@ public class AddSleep extends RootActivity {
                 Toast toast = Toast.makeText(getApplicationContext(), "Successfully Added", Toast.LENGTH_SHORT);
                 toast.show();
 
-                Intent intent = new Intent(AddSleep.this, CaretaskRouter.class);
-                intent.putExtra("senior", senior);
-                intent.putExtra("date", date);
-                intent.putExtra("caretask", "Sleep");
-                intent.putExtra("role", role);
-                startActivity(intent);
                 finish();
             }
         });

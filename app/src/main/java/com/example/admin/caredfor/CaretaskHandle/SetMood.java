@@ -12,6 +12,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.admin.caredfor.MainActivity.MainActivity;
 import com.example.admin.caredfor.R;
 import com.example.admin.caredfor.RootActivity;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +38,7 @@ public class SetMood extends RootActivity{
         setContentView(R.layout.activity_set_mood);
 
         final Senior senior = (Senior) getIntent().getSerializableExtra("senior");
-        final Date date = (Date) getIntent().getSerializableExtra("date");
+        final String date = (String) getIntent().getSerializableExtra("date");
         final String role = (String) getIntent().getSerializableExtra("role");
 
         final ImageView sad = (ImageView) findViewById(R.id.sad);
@@ -93,7 +94,7 @@ public class SetMood extends RootActivity{
                     seniorMood = new HashMap<>();
                 }
 
-                seniorMood.put(date.toString(), mood.toMap());
+                seniorMood.put(date, mood.toMap());
                 senior.setMood(seniorMood);
 
                 //delete the from db and re-add with new information
@@ -109,14 +110,6 @@ public class SetMood extends RootActivity{
                 Toast toast = Toast.makeText(getApplicationContext(), "Successfully Added", Toast.LENGTH_SHORT);
                 toast.show();
 
-                Intent intent = new Intent(SetMood.this, CaretaskRouter.class);
-                intent.putExtra("senior", senior);
-                intent.putExtra("date", date);
-                intent.putExtra("caretask", "Mood");
-                intent.putExtra("role", role);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
                 finish();
             }
         });

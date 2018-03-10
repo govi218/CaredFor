@@ -32,7 +32,7 @@
                 android:hapticFeedbackEnabled="false"
                 android:padding="10dp"
                 app:srcCompat="@drawable/calendar2"
-                tools:ignore="ContentDescription" />
+                tools:ignore="ContentDescription"/>
 
             <ImageButton
                 android:id="@+id/food_intake_image"
@@ -89,7 +89,7 @@
                 android:layout_alignLeft="@+id/sleep_image"
                 android:layout_alignStart="@+id/sleep_image"
                 android:layout_below="@+id/sleep_image"
-                android:background="@drawable/roundcorner"
+                android:background="@drawable/roundbutton"
                 android:padding="10dp"
                 app:srcCompat="@drawable/medication2"
                 tools:ignore="ContentDescription" />
@@ -113,6 +113,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_toEndOf="@+id/schedule_image"
                 android:layout_toRightOf="@+id/schedule_image"
+                android:background="@drawable/roundcorner"
                 android:gravity="start|center"
                 android:text="@string/careschedule"
                 android:textAlignment="center"
@@ -127,6 +128,7 @@
                 android:layout_alignLeft="@+id/schedule"
                 android:layout_alignStart="@+id/schedule"
                 android:layout_below="@+id/schedule"
+                android:background="@drawable/roundcorner"
                 android:gravity="start|center"
                 android:text="@string/food_intake"
                 android:textAlignment="center"
@@ -141,6 +143,7 @@
                 android:layout_alignLeft="@+id/food_intake"
                 android:layout_alignStart="@+id/food_intake"
                 android:layout_below="@+id/food_intake"
+                android:background="@drawable/roundcorner"
                 android:gravity="start|center"
                 android:text="@string/hygiene"
                 android:textAlignment="center"
@@ -155,6 +158,7 @@
                 android:layout_alignLeft="@+id/hygiene"
                 android:layout_alignStart="@+id/hygiene"
                 android:layout_below="@+id/hygiene"
+                android:background="@drawable/roundcorner"
                 android:gravity="start|center"
                 android:text="@string/sleep"
                 android:textAlignment="center"
@@ -169,6 +173,7 @@
                 android:layout_alignLeft="@+id/sleep"
                 android:layout_alignStart="@+id/sleep"
                 android:layout_below="@+id/sleep"
+                android:background="@drawable/roundcorner"
                 android:gravity="start|center"
                 android:text="@string/medication"
                 android:textAlignment="center"
@@ -183,6 +188,7 @@
                 android:layout_alignLeft="@+id/medication"
                 android:layout_alignStart="@+id/medication"
                 android:layout_below="@+id/medication"
+                android:background="@drawable/roundcorner"
                 android:gravity="start|center"
                 android:text="@string/activities"
                 android:textAlignment="center"
@@ -197,6 +203,7 @@
                 android:layout_alignLeft="@+id/activities"
                 android:layout_alignStart="@+id/activities"
                 android:layout_below="@+id/activities"
+                android:background="@drawable/roundcorner"
                 android:gravity="start|center"
                 android:text="@string/mood"
                 android:textAlignment="center"
@@ -212,6 +219,7 @@
         android:layout_height="40sp"
         android:layout_above="@+id/scrollView4"
         android:layout_centerHorizontal="true"
+        android:textAlignment="center"
         android:textColor="@color/colorAccent" />
 
     <TextView
@@ -225,4 +233,13 @@
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/scanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scrollView4"
+        android:layout_toLeftOf="@+id/date_view"
+        android:layout_toStartOf="@+id/date_view"
+        android:text="Button" />
 </RelativeLayout>
