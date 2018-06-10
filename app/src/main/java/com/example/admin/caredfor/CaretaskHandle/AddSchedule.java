@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.admin.caredfor.MainActivity.MainActivity;
 import com.example.admin.caredfor.R;
 import com.example.admin.caredfor.RootActivity;
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import Caretask.Careschedule;
@@ -36,20 +38,13 @@ public class AddSchedule extends RootActivity {
 
         //receive senior
         final Senior senior = (Senior) getIntent().getSerializableExtra("senior");
-        final Date date = (Date) getIntent().getSerializableExtra("date");
+        final String date = (String) getIntent().getSerializableExtra("date");
 
         //initialize
         final Button submit = (Button) findViewById(R.id.submit_schedule);
 
         final EditText arrival = (EditText) findViewById(R.id.arrival);
         final EditText departure = (EditText) findViewById(R.id.departure);
-
-        if (arrival == null) {
-            Log.d("oh","no");
-        } else {
-            Log.d("oh", "yes");
-        }
-
 
         arrival.setOnClickListener(new View.OnClickListener() {
 
@@ -62,7 +57,9 @@ public class AddSchedule extends RootActivity {
                 mTimePicker = new TimePickerDialog(AddSchedule.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        arrival.setText( selectedHour + ":" + selectedMinute);
+                        if (arrival != null) {
+                            arrival.setText(String.format(Locale.CANADA, "%d:%d", selectedHour, selectedMinute));
+                        }
                     }
                 }, hour, minute, false);//Yes 24 hour time
                 mTimePicker.setTitle("Select Time");
@@ -81,7 +78,7 @@ public class AddSchedule extends RootActivity {
                 mTimePicker = new TimePickerDialog(AddSchedule.this, new TimePickerDialog.OnTimeSetListener() {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        departure.setText( selectedHour + ":" + selectedMinute);
+                        departure.setText(String.format(Locale.CANADA, "%d:%d", selectedHour, selectedMinute));
                     }
                 }, hour, minute, false);//Yes 24 hour time
                 mTimePicker.setTitle("Select Time");
@@ -116,7 +113,7 @@ public class AddSchedule extends RootActivity {
                     seniorSchedule = new HashMap<>();
                 }
 
-                seniorSchedule.put(date.toString(), careschedule.toMap());
+                seniorSchedule.put(date, careschedule.toMap());
                 senior.setCareSchedule(seniorSchedule);
 
                 //delete the from db and re-add with new information
@@ -132,11 +129,6 @@ public class AddSchedule extends RootActivity {
                 Toast toast = Toast.makeText(getApplicationContext(), "Successfully Added", Toast.LENGTH_SHORT);
                 toast.show();
 
-                Intent intent = new Intent(AddSchedule.this, CaretaskRouter.class);
-                intent.putExtra("senior", senior);
-                intent.putExtra("date", date);
-                intent.putExtra("caretask", "Schedule");
-                startActivity(intent);
                 finish();
             }
         });

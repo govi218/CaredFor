@@ -30,8 +30,8 @@
     <string name="role">Role</string>
     <string name="relative">Relative</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="dependent">Tap to add new dependent</string>
-    <string name="add_a_dependent">Add A Dependent</string>
+    <string name="dependent">Tap to add new family member</string>
+    <string name="add_a_dependent">Add A Family Member</string>
     <string name="address">Address</string>
     <string name="title_activity_main">activity_main</string>
     <string name="title_activity_add_senior">activity_add_senior</string>
@@ -67,7 +67,7 @@
     <string name="medication">Medication</string>
     <string name="activities">Activities</string>
     <string name="mood">Mood</string>
-    <string name="no_senior_main_activity">No Dependants</string>
+    <string name="no_senior_main_activity">No Family Members</string>
     <string name="activity_caretask_handler">caretask_handler</string>
     <string name="activity_activities_handler">activities_handler</string>
     <string name="activity_add_activities">add_activities</string>
@@ -108,4 +108,5 @@
     <string name="arrival">Arrival</string>
     <string name="facebook_app_id">1051026208330592</string>
     <string name="fb_login_protocol_scheme">fb1051026208330592</string>
+    <string name="schedulr_for_this_date">Schedule for this date:</string>
 </resources>

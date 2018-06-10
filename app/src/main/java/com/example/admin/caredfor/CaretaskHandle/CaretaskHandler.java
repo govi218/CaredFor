@@ -31,7 +31,7 @@ public class CaretaskHandler extends RootActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caretask_for_date_new);
         //get objects from the previous view
-        final Date date = (Date) getIntent().getSerializableExtra("date");
+        final String date = (String) getIntent().getSerializableExtra("date");
         final Senior senior = (Senior) getIntent().getSerializableExtra("senior");
 
         final String role = (String) getIntent().getSerializableExtra("role");
@@ -44,8 +44,10 @@ public class CaretaskHandler extends RootActivity {
         final TextView comments = (TextView) findViewById(R.id.comments);
         final TextView commentsView = (TextView) findViewById(R.id.comments_view);
 
-        title.setText(senior.getFirstName() + " " + senior.getLastName());
-        dateView.setText(date.toString());
+        Log.d("date in handler", date);
+
+        title.setText(String.format("%s %s", senior.getFirstName(), senior.getLastName()));
+        dateView.setText(date);
 
         ArrayList<String> populateTaskList = new ArrayList<>();
 
@@ -85,19 +87,16 @@ public class CaretaskHandler extends RootActivity {
                 break;
         }
 
-        if (taskMap != null && taskMap.containsKey(date.toString())) {
+        if (taskMap != null && taskMap.containsKey(date)) {
 
             //if contains, add it to list adapter to populate
-            Map<String, String> taskForDate = taskMap.get(date.toString());
+            Map<String, String> taskForDate = taskMap.get(date);
 
-            for (String value : taskForDate.values()){
-                populateTaskList.add(value);
-            }
+            populateTaskList.addAll(taskForDate.values());
             if (task.equals("Care Schedule")) {
 
-                commentsView.setText("Schedule for this date:");
-                comments.setText("Arrival: " + populateTaskList.get(0) + "\n"
-                        + "Departure: " + populateTaskList.get(1));
+                commentsView.setText(R.string.schedulr_for_this_date);
+                comments.setText(String.format("Arrival: %s\nDeparture: %s", populateTaskList.get(0), populateTaskList.get(1)));
             } else {
 
                 String setTags = "Tags: " + populateTaskList.get(0);
@@ -109,7 +108,7 @@ public class CaretaskHandler extends RootActivity {
         } else{
             commentsView.setText("");
             if (role.equals("c")) {
-                comments.setText("Tap to set " + task.toLowerCase() + " for this date");
+                comments.setText(String.format("Tap to set %s for this date", task.toLowerCase()));
                 comments.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

@@ -37,7 +37,6 @@ public class Senior implements Serializable {
     private Map<String, Map<String, String>> activities;
     private Map<String, Map<String, String>> mood;
     private Map<String, Map<String, String>> sleep;
-    private Map<String, Map<String, String>> chat;
 
     public Senior (){}
 
